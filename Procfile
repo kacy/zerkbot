@@ -1,1 +1,1 @@
-app: bin/hubot -a hipchat -n Hubot --alias zerkbot
+app: bin/hubot -a hipchat -n zerkbot --alias zerkbot
