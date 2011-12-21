@@ -9,4 +9,3 @@ module.exports = (robot) ->
       .query(s: msg.match[2])
       .get() (err, res, body) ->
         msg.send body
-
