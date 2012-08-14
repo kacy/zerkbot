@@ -16,6 +16,7 @@
 
   "dependencies": {
     "hubot-hipchat": ">= 1.0.9",
+    "node": ">= 0.5.0",
     "hubot": ">= 2.3.0",
     "hubot-scripts": "2.0.2",
     "optparse": "1.0.3"
