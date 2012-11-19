@@ -1,17 +1,15 @@
-# Description:
-#   Allows Hubot to know many languages.
+# Allows Hubot to know many languages.
 #
-# Commands:
-#   hubot translate me <phrase> - Searches for a translation for the <phrase> and then prints that bad boy out.
-#   hubot translate me from <source> into <target> <phrase> - Translates <phrase> from <source> into <target>. Both <source> and <target> are optional
+# translate me <phrase> - Searches for a translation for the <phrase> and then
+#                         prints that bad boy out.
+#
+# translate me from <source> into <target> <phrase> - Translates <phrase> from <source> into <target>. Both <source> and <target> are optional
+#
 
 languages =
   "af": "Afrikaans",
   "sq": "Albanian",
   "ar": "Arabic",
-  "az": "Azerbaijani",
-  "eu": "Basque",
-  "bn": "Bengali",
   "be": "Belarusian",
   "bg": "Bulgarian",
   "ca": "Catalan",
@@ -22,17 +20,13 @@ languages =
   "da": "Danish",
   "nl": "Dutch",
   "en": "English",
-  "eo": "Esperanto",
   "et": "Estonian",
   "tl": "Filipino",
   "fi": "Finnish",
   "fr": "French",
   "gl": "Galician",
-  "ka": "Georgian",
   "de": "German",
   "el": "Greek",
-  "gu": "Gujarati",
-  "ht": "Haitian Creole",
   "iw": "Hebrew",
   "hi": "Hindi",
   "hu": "Hungarian",
@@ -41,9 +35,7 @@ languages =
   "ga": "Irish",
   "it": "Italian",
   "ja": "Japanese",
-  "kn": "Kannada",
   "ko": "Korean",
-  "la": "Latin",
   "lv": "Latvian",
   "lt": "Lithuanian",
   "mk": "Macedonian",
@@ -61,12 +53,9 @@ languages =
   "es": "Spanish",
   "sw": "Swahili",
   "sv": "Swedish",
-  "ta": "Tamil",
-  "te": "Telugu",
   "th": "Thai",
   "tr": "Turkish",
   "uk": "Ukranian",
-  "ur": "Urdu",
   "vi": "Vietnamese",
   "cy": "Welsh",
   "yi": "Yiddish"
@@ -97,10 +86,10 @@ module.exports = (robot) ->
       .header('User-Agent', 'Mozilla/5.0')
       .get() (err, res, body) ->
         data   = body
-        if data.length > 4 and data[0] == '['
+        if data.length > 4 && data[0] == '['
           parsed = eval(data)
           language =languages[parsed[2]]
-          parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
+          parsed = parsed[0] && parsed[0][0] && parsed[0][0][0]
           if parsed
             if msg.match[2] is undefined
               msg.send "#{term} is #{language} for #{parsed}"
