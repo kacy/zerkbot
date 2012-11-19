@@ -1,2 +1,2 @@
-web: coffee bin/hubot -a hipchat -n zerkbot --alias zerkbot
+app: bin/hubot -a hipchat -n "zerk bot" --alias zerkbot
 
