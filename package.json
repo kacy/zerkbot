@@ -19,6 +19,7 @@
   },
 
   "dependencies": {
+    "hubot": "2.3.2",
     "hubot-hipchat": ">= 1.1.2",
     "coffee-script": "1.3.3",
     "optparse": "1.0.3",
